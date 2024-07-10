@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
@@ -11,27 +5,9 @@ from matplotlib import pyplot as plt
 data = pd.read_csv('train.csv')
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
 data = np.array(data)
 m, n = data.shape
 np.random.shuffle(data)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 data_dev = data[0:1000].T
@@ -42,29 +18,12 @@ X_dev = X_dev / 255.
 # in the range [0:1].
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
 data_train = data[1000:m].T
 Y_train = data_train[0]
 X_train = data_train[1:n]
 X_train = X_train / 255.
 _, m_train = X_train.shape
 
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 def init_params():
@@ -128,13 +87,6 @@ def update_params(W1, b1, W2, b2, dW1, db1, dW2, db2, alpha):
     return W1, b1, W2, b2
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 def get_predictions(A2):
@@ -168,25 +120,10 @@ def gradient_descent(X, Y, alpha, iterations):
     return W1, b1, W2, b2
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
 
 W1, b1, W2, b2 = gradient_descent(X_train, Y_train, 0.10, 1000)
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 def make_predictions(X, W1, b1, W2, b2):
@@ -215,14 +152,6 @@ def test_prediction(index, W1, b1, W2, b2):
     plt.show()
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
 
 test_prediction(0, W1, b1, W2, b2)
 test_prediction(1, W1, b1, W2, b2)
@@ -230,27 +159,9 @@ test_prediction(2, W1, b1, W2, b2)
 test_prediction(3, W1, b1, W2, b2)
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 # To check the final accuracy of our model
 
-
-# In[ ]:
-
-
 dev_predictions = make_predictions(X_dev, W1, b1, W2, b2)
 get_accuracy(dev_predictions, Y_dev)
-
-
-# In[ ]:
-
-
-
-
