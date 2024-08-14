@@ -36,7 +36,7 @@ Activation functions used:
 The model is trained using gradient descent. The loss function used is categorical cross-entropy. The training process involves the following steps:
 1. **Initialization**: Randomly initialize the weights and biases.
 2. **Forward Propagation**: Compute the activations for each layer.
-3. **Backward Propagation**: Compute the gradients of the loss with respect to the weights and biases.
+3. **Backward Propagation**: Compute the gradients of the parameters (weights and biases) with respect to the loss.
 4. **Parameter Update**: Update the weights and biases using the computed gradients.
 
 ## Usage
